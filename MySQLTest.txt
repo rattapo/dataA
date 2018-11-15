@@ -1,0 +1,35 @@
+CREATE TABLE `customer` (
+`CustomerID` varchar(4) NOT NULL,
+`Name` varchar(50) NOT NULL,
+`Email` varchar(50) NOT NULL,
+`CountryCode` varchar(2) NOT NULL,
+`Budget` double NOT NULL,
+`Used` double NOT NULL,
+PRIMARY KEY  (`CustomerID`)
+) ENGINE=InnoDB
+
+
+
+
+
+INSERT INTO `customer` VALUES ('C001', 'Win Weerachai', 'win.weerachai@thaicreate.com', 'TH',1000000, 600000);
+INSERT INTO `customer` VALUES ('C002', 'John  Smith', 'john.smith@thaicreate.com', 'EN', 2000000,800000);
+INSERT INTO `customer` VALUES ('C003', 'Jame Born', 'jame.born@thaicreate.com', 'US', 3000000,600000);
+INSERT INTO `customer` VALUES ('C004', 'Chalee Angel', 'chalee.angel@thaicreate.com', 'US',4000000, 100000);
+INSERT INTO `customer` VALUES ('C005', 'Weerachai Nukitram', 'webmaster@thaicreate.com', 'TH',2000000, 100000);
+
+
+
+CREATE TABLE `member` (
+`UserID` int(3) unsigned zerofill NOT NULL auto_increment,
+`Username` varchar(20) NOT NULL,
+`Password` varchar(20) NOT NULL,
+`Name` varchar(100) NOT NULL,
+`Status` enum('ADMIN','USER') NOT NULL default 'USER',
+PRIMARY KEY  (`UserID`),
+UNIQUE KEY `Username` (`Username`)
+) ENGINE=MyISAM  AUTO_INCREMENT=3 ;
+
+
+INSERT INTO `member` VALUES (001, 'win', 'win123', 'Weerachai Nukitram', 'USER');
+INSERT INTO `member` VALUES (002, 'chai', 'chai123', 'Surachai Sirisart', 'ADMIN');
